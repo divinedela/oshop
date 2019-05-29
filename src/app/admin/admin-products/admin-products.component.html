@@ -1,25 +1,43 @@
 <p>
-  <button class="btn btn-primary"  routerLink ="/admin/products/new">New product</button>
+  <button (click)="add()" class="btn btn-primary"  routerLink ="/admin/products/new">New product</button>
 </p>
 
 <div>
   <input type="text" (keyup) = "filter(query.value)" class="form-control" placeholder="search..." #query>
 </div>
 
-<table class="table" *ngIf="filteredProducts">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of filteredProducts">
-      <td>{{product.title}}</td>
-      <td>{{product.price}}</td>
-      <td><a routerLink="/admin/products/{{product.key}}">Edit</a></td>
-    </tr>
-  </tbody>
-
-</table>
+<div>
+     <data-table id="products-table"
+      [title]="'Products'"
+      [items]="items"
+      [itemCount]="itemCount"
+      (reload)="reload($event)"
+      [pagination]= true
+      [showTitle]= "false"
+      >
+      <data-table-column
+        [property]="'title'"
+        [header]="'title'"
+        [sortable] = true
+        [resizable] = true
+      >
+      </data-table-column>
+      <data-table-column
+        [property]="'price'"
+        [header]="'Price'"
+        [sortable] = true
+        [resizable] = true
+      >
+      </data-table-column>
+      <data-table-column
+        header="Actions">
+        <ng-template #dataTableHeader let-item="item">
+          Actions
+        </ng-template>
+        <ng-template #dataTableCell let-item="item">
+            <a routerLink="/admin/products/{{item.key}}">Edit</a>
+        </ng-template>
+    </data-table-column>
+    </data-table>
+    
+</div>

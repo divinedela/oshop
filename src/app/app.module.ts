@@ -5,6 +5,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule} from "@angular/fire/auth";
 import { AngularFireDatabaseModule} from "@angular/fire/database";
+import { DataTableModule } from "angular7-data-table";
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -40,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    DataTableModule.forRoot(),
     RouterModule.forRoot([
       { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard, AdminAuthGuard] },
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] },
