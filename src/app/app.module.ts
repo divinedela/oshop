@@ -18,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { AdminAuthGuard } from './services/admin-auth.guard';
 import { NoAccessComponent } from './no-access/no-access.component';
+import { ProductFormComponent } from './product-form/product-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,19 +31,24 @@ import { NoAccessComponent } from './no-access/no-access.component';
     OrdersComponent,
     HomeComponent,
     LoginComponent,
-    NoAccessComponent
-  ],
+    NoAccessComponent,
+    ProductFormComponent
+],
   imports: [
     BrowserModule, 
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     RouterModule.forRoot([
       { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard, AdminAuthGuard] },
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] },
+      { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard] },
+      { path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard] },
       { path: 'my/orders', component: OrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] },
 
       { path: 'shopping-cart', component:ShoppingCartComponent },
+
       { path: 'login', component: LoginComponent },
       { path: 'no-access', component : NoAccessComponent},
       { path: '', component : HomeComponent},
