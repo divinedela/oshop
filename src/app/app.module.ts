@@ -21,6 +21,9 @@ import { AdminAuthGuard } from './services/admin-auth.guard';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
+import { ProductsComponent } from './products/products.component';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     LoginComponent,
     NoAccessComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductsComponent,
+    ProductFilterComponent,
+    ProductCardComponent
 ],
   imports: [
     BrowserModule, 
@@ -53,7 +59,7 @@ import { FormsModule } from '@angular/forms';
 
       { path: 'login', component: LoginComponent },
       { path: 'no-access', component : NoAccessComponent},
-      { path: '', component : HomeComponent},
+      { path: '', component : ProductsComponent},
      
     ]),
     NgbModule.forRoot(),

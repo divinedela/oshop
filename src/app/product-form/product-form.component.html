@@ -33,13 +33,6 @@
   </div>
 
   <div class="col-6">
-      <div class="card" *ngIf="product.title">
-          <img class="card-img-top" [src]="product.image">
-          <div class="card-body">
-            <h5 class="card-title">{{product.title}}</h5>
-            <p class="card-text">{{product.price | currency: 'USD'}}</p>
-            <p class="card-text">{{product.category}}</p>
-          </div>
-      </div>
+      <product-card [product]="product" [show-actions]=false></product-card>
   </div>
 </div>
