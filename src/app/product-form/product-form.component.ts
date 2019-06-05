@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-  product: Product = {title: '', price: 0, category: '', image: ''};
+  product: Product = {title: '', price: 0, category: '', imageUrl: ''};
   categories$;
   id: string;
 

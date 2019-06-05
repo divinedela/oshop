@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product.model';
 import { switchMap } from "rxjs/operators";
+import { ShoppingCartService } from '../services/shopping-cart.service';
+import { Subscription, Observable } from 'rxjs';
+import { ShoppingCart } from '../models/ShoppingCart';
 
 @Component({
   selector: 'app-products',
@@ -14,24 +17,28 @@ export class ProductsComponent implements OnInit {
   filteredProducts: Product[] = [];
   category: string;
   products: Product[] = [];
+  cart$: Observable<ShoppingCart>;
 
   constructor(
     private productService: ProductService, 
-    private route: ActivatedRoute
-    ) {
-    this.productService.getAll().pipe(
-      switchMap(products => {
-        this.products = this.filteredProducts = products;
-        return this.route.queryParamMap;
-      })
-    ).subscribe(params => {
+    private route: ActivatedRoute,
+    private cartService: ShoppingCartService
+    ) { }
+  
+   async ngOnInit() {
+    this.populateProducts();
+    this.cart$ = (await this.cartService.getCart());
+  }
+
+  private populateProducts() {
+    this.productService.getAll().pipe(switchMap(products => {
+      this.products = this.filteredProducts = products;
+      return this.route.queryParamMap;
+    })).subscribe(params => {
       this.category = params.get('category');
       this.filterProductsByCategory();
     });
-    
-   }
-  
-  ngOnInit() {}
+  }
 
   private filterProductsByCategory() {
     this.filteredProducts = (this.category) ?
