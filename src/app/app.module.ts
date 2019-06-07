@@ -55,7 +55,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] },
       { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard] },
       { path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard] },
-      { path: 'my/orders', component: OrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] },
+      { path: 'my/orders', component: OrdersComponent, canActivate: [AuthGuard] },
 
       { path: 'shopping-cart', component:ShoppingCartComponent },
 
