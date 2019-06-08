@@ -25,6 +25,10 @@ import { ProductsComponent } from './products/products.component';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
+import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     ProductsComponent,
     ProductFilterComponent,
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    CheckOutComponent,
+    OrderSuccessComponent,
+    ShoppingCartSummaryComponent,
+    ShippingFormComponent
 ],
   imports: [
     BrowserModule, 
@@ -55,10 +63,12 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] },
       { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard] },
       { path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard] },
+     
+      { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
+      { path: 'order-success/:id', component: OrderSuccessComponent, canActivate: [AuthGuard] },
       { path: 'my/orders', component: OrdersComponent, canActivate: [AuthGuard] },
 
       { path: 'shopping-cart', component:ShoppingCartComponent },
-
       { path: 'login', component: LoginComponent },
       { path: 'no-access', component : NoAccessComponent},
       { path: '', component : ProductsComponent},

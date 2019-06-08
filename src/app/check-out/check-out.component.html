@@ -1,0 +1,11 @@
+
+<p><button (click)="goBack()" class="btn btn-primary">Go Back</button></p>
+<h2>Shipping</h2>
+<div class="row" *ngIf="cart$ | async as cart">
+  <div class="col-6">
+    <shipping-form [shopping-cart]="cart"></shipping-form>
+  </div>
+  <div class="col-6">
+    <shopping-cart-summary [shopping-cart]="cart"></shopping-cart-summary>
+  </div>
+</div>
