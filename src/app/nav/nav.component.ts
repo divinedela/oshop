@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 export class NavComponent implements OnInit {
   appUser: AppUser;
   cart$: Observable<ShoppingCart>;
+  isCollapsed = true;
 
   constructor(private auth: AuthService, private shoppingCartService: ShoppingCartService) { }
 
