@@ -32,6 +32,9 @@ export class AuthService {
       .then(res => {
         this.updateUser(res);
         this.router.navigateByUrl(returnUrl);
+      })
+      .catch(err => {
+        alert(err);
       });
   }
 
