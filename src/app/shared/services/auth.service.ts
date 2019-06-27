@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { auth } from "firebase/app";
-import { UserService } from './user.service';
+import { UserService } from 'shared/services/user.service';
 import { AppUser } from "shared/models/AppUser";
 import { Observable, of } from 'rxjs';
 import * as _ from 'lodash';

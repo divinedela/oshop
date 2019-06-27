@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'shared/models/product.model';
-import { ProductService } from '../services/product.service';
+import { ProductService } from 'shared/services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
-import { CategoryService } from '../services/category.service';
+import { CategoryService } from 'shared/services/category.service';
 import { Location } from '@angular/common';
 
 @Component({
