@@ -8,10 +8,7 @@ import * as _ from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
 
   user$: Observable<firebase.User>;

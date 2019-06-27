@@ -4,9 +4,7 @@ import { Product } from 'shared/models/product.model';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProductService {
 
   constructor(private db: AngularFireDatabase) { }

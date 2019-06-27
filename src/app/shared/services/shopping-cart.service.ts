@@ -7,9 +7,7 @@ import { map, take } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { ShoppingCart } from 'shared/models/ShoppingCart';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ShoppingCartService {
 
   constructor(private db: AngularFireDatabase, private auth: AuthService) { }
