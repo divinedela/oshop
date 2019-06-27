@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Product } from '../models/product.model';
+import { Product } from 'shared/models/product.model';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 

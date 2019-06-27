@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CategoryService } from 'src/app/services/category.service';
+import { CategoryService } from 'app/services/category.service';
 
 @Component({
   selector: 'product-filter',

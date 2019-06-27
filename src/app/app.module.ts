@@ -14,7 +14,7 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { OrdersComponent } from './orders/orders.component';
 import { HomeComponent } from './home/home.component';
-import { environment } from 'src/environments/environment';
+import { environment } from 'environments/environment';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { AdminAuthGuard } from './services/admin-auth.guard';

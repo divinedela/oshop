@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { auth } from "firebase/app";
 import { UserService } from './user.service';
-import { AppUser } from "../models/AppUser";
+import { AppUser } from "shared/models/AppUser";
 import { Observable, of } from 'rxjs';
 import * as _ from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';

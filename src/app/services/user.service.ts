@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AppUser } from '../models/AppUser';
+import { AppUser } from 'shared/models/AppUser';
 
 @Injectable({
   providedIn: 'root'
